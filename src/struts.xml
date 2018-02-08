@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<!--  
+
+package 一个类型处理使用一个 package ,便于开发，例如：对用户的怎删改查 可以取一个 package name ="User"
+namespace 同上的理解，对用户的处理都使用 namespace="/user",就是在 requestservletPatch 中的 /*.action之前加上  namespace'
+extends 继承某个配置：strucs_default 中默认定义大量的result type 和各种 前后 拦截器配置；
+
+action :name 的value ，作用的actionMappe根据 RequstServletPath 中的 /.action 来寻找到对应的result
+class: 对应的是 处理 这个请求的 class文件 ，ctrl+左击可以选中的action类，method:对应在对应的action中处理 这个请求的的方法名，
+result：name对应的是 处理该请求的返回值，如果对应就返回对应的 文件；
+result:type:请求种类dispathcher,以及重定向。。。
+
+通配符的使用：user.xml (_ex_)
+-->
+<!--     <include file="example.xml"/> 可以包含其他的 配置文件 进来，可以让 开发会更加清晰，可以为每个模块创建 xml 文件 
+让整个开发的任务块更加的清晰
+-->
+<!-- 默认处理系统页面的跳转 -->
+    <package name="indexAction" namespace="/index" extends="struts-default">
+        <action name="login"><result>/WEB-INF/struts_page/login.jsp</result></action>
+    </package>
+    <!-- Add packages here -->
+    
+    <!-- Add xml file here -->
+    <include file="User.xml"/>
+
+</struts>

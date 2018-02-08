@@ -1,0 +1,6 @@
+导入 jar包
+配置 web.xml 和 引入 struts.xml 文件配置 
+以上两个步骤 框架已经搭建好了。
+
+创建 Action实体
+创建跳转 jsp 页面
